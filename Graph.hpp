@@ -4,8 +4,6 @@
 #include "GraphBase.hpp"
 #include <string>
 #include <vector>
-#include <unordered_map>
-#include <list>
 
 // Implement the Graph class that inherits from GraphBase.
 // Use an adjacency list stored as an unordered_map from label to list of edges.
@@ -28,7 +26,16 @@ private:
         unsigned long weight;
     };
 
-    std::unordered_map<std::string, std::list<Edge>> adjList;
+    struct Vertex {
+        std::string label;
+        std::vector<Edge> edges;
+    };
+
+    // Helper functions for our vector-based implementation
+    int findVertexIndex(const std::string& label) const;
+    void removeEdgeFromVertex(int vertexIndex, const std::string& targetLabel);
+    
+    std::vector<Vertex> vertices;  // Replaces unordered_map and list
 };
 
 #endif 

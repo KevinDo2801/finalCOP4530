@@ -1,4 +1,9 @@
+# Prerequisites
+*.d
+
 # Compiled Object files
+*.slo
+*.lo
 *.o
 *.obj
 
@@ -11,6 +16,10 @@
 *.dylib
 *.dll
 
+# Fortran module files
+*.mod
+*.smod
+
 # Compiled Static libraries
 *.lai
 *.la
@@ -21,16 +30,15 @@
 *.exe
 *.out
 *.app
-
-# Build directory
-build/
-dist/
+graph_test
 
 # IDE specific files
 .vscode/
-.idea/
-*.swp
-*.swo
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 
 # OS generated files
 .DS_Store
